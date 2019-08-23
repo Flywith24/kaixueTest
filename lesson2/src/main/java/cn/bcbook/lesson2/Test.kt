@@ -41,9 +41,7 @@ class Test private constructor() {
         val startTime = System.currentTimeMillis()
         val list = List(100000, init = { i -> i + 1 })
         var sum = 0L
-        for (i in list) {
-            sum += i
-        }
+        list.forEach { sum += it }
         val average = sum / list.size
         log("List平均值为：$average 用时为${System.currentTimeMillis() - startTime}")
     }
